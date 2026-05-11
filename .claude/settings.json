@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /Users/danielbolanos/Documents/data-labz/scripts/session-end.sh",
+            "timeout": 35,
+            "statusMessage": "Syncing milestones..."
+          }
+        ]
+      }
+    ]
+  }
+}
