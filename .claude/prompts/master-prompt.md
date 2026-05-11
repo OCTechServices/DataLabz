@@ -203,6 +203,15 @@ If a task doesn't serve one of these purposes — question it before building it
 
 ---
 
+## Deployment Pattern (OCTech Standard)
+
+**Never use Vercel GitHub integration on Hobby plan.** The commit author check blocks deployments. Always deploy via Vercel CLI:
+```bash
+npm install -g vercel
+vercel --prod
+```
+Disconnect any GitHub repo connection in Vercel → Project Settings → Git first. This is confirmed across multiple OCTech projects (data-labz, pic4pic).
+
 ## How to Use This Prompt
 
 **At the start of a new session:**

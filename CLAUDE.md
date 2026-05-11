@@ -123,7 +123,17 @@ Read CLAUDE.md, RAID.md, and .claude/prompts/master-prompt.md
 and confirm all three are accurate before we sign off.
 ```
 
-## 10. Deployment Checklist (Vercel)
+## 10. Deployment Notes (Vercel)
+
+### Deploy Method
+**Do NOT use GitHub integration on Vercel Hobby plan.** The commit author check blocks deployments when the git user email differs from the connected GitHub account. Use the Vercel CLI instead:
+```bash
+npm install -g vercel   # one-time
+vercel --prod           # deploy from project root
+```
+Disconnect any connected GitHub repo in Vercel → Project Settings → Git before deploying via CLI. This is the established pattern across OCTech projects.
+
+### Deployment Checklist
 - [ ] Set `NEXT_PUBLIC_SUPABASE_URL` in Vercel env vars
 - [ ] Set `NEXT_PUBLIC_SUPABASE_ANON_KEY` in Vercel env vars
 - [ ] Set `SUPABASE_SERVICE_ROLE_KEY` in Vercel env vars (server-side only)
